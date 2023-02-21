@@ -3,12 +3,14 @@ import { loadPkm, fetchHandler } from "./shared/api.js";
 Vue.createApp({
   data() {
     return {
-      pokemon: [],
+      pkmList: [],
+      details: [],
     };
   },
   async mounted() {
-    await loadPkm();
-    return (this.pokemon = jsonData);
+    const data = await loadPkm();
+    this.pkmList = data;
+
     // const res = await fetch(
     //   "https://pokeapi.co/api/v2/pokemon?limit=1500&offset=0"
     // );

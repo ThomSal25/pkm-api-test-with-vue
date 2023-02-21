@@ -11,8 +11,13 @@
 
 <body>
     <main id="app">
-        <ul>
-            <li v-for="pkm in pokemon.results">{{pkm.name}} {{pkm.url}}</li>
+        <ul class="main-list">
+            <li v-for="pkm in pkmList.results"> Name: {{pkm.name}}
+                <ul>
+                    <li>number: </li>
+                    <li><a :href=pkm.url>Show all information: {{pkm.url}}</a></li>
+                </ul>
+            </li>
         </ul>
     </main>
     <script src="https://unpkg.com/vue@next"></script>
